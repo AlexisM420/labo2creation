@@ -6,6 +6,7 @@ namespace Inventaire
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
+    /// petite modif test branche
     public partial class App : Application
     {
         CustomerView _window;
