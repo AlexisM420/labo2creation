@@ -8,7 +8,6 @@ namespace BillingManagement.UI.ViewModels
     public class CustomerViewModel : BaseViewModel
     {
         readonly CustomersDataService customersDataService = new CustomersDataService();
-        readonly ContactInfosDataService contactInfosDataService = new ContactInfosDataService();
 
         private ObservableCollection<Customer> customers;
         private Customer selectedCustomer;
