@@ -1,4 +1,5 @@
 ﻿using app_models;
+using BillingManagement.Models;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -9,6 +10,8 @@ namespace BillingManagement.Business
     public class CustomersDataService : IDataService<Customer>
     {
         readonly List<Customer> customers;
+        public List<ContactInfo> contactInfos;
+        public List<Invoice> invoices;
 
 
         public CustomersDataService()
@@ -118,7 +121,8 @@ namespace BillingManagement.Business
 
             };
 
-            List<ContactInfo> contactInfos = new ContactInfosDataService().GetAll().ToList();
+            contactInfos = new ContactInfosDataService().GetAll().ToList();
+            invoices = new InvoicesDataService().GetAll().ToList();
 
             Random rnd = new Random();
 
@@ -133,6 +137,15 @@ namespace BillingManagement.Business
                     var index = rnd.Next(contactInfos.Count);
                     var ci = contactInfos[index];
                     c.ContactInfos.Add(ci);
+                }
+
+                var nbInvoices = rnd.Next(1, 4);
+
+                for (int i = 0; i < nbContacts; i++)
+                {
+                    var index = rnd.Next(invoices.Count);
+                    var inv = invoices[index];
+                    c.InvoicesCstm.Add(inv);
                 }
             }
         }

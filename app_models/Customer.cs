@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BillingManagement.Models;
+using System;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
@@ -91,6 +92,7 @@ namespace app_models
         }
 
         public ObservableCollection<ContactInfo> ContactInfos { get; set; }
+        public ObservableCollection<Invoice> InvoicesCstm { get; set; }
 
         public event PropertyChangedEventHandler PropertyChanged;
 

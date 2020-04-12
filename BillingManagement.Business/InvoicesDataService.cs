@@ -9,31 +9,17 @@ namespace BillingManagement.Business
 {
     public class InvoicesDataService : IDataService<Invoice>
     {
-        readonly List<Invoice> invoices;
-        readonly CustomersDataService customersDataService = new CustomersDataService();
+        readonly List<Invoice> invoices = new List<Invoice>();
 
-        private ObservableCollection<Customer> customers;
         public InvoicesDataService()
         {
-            customers = new ObservableCollection<Customer>(customersDataService.GetAll());
-            //List<ContactInfo> contactInfos = new ContactInfosDataService().GetAll().ToList();
+            Random rdm = new Random();
 
-            Random rnd = new Random();
-
-            foreach (Customer c in customers)
+            for(int i = 0; i < 300; i++)
             {
-                //c.in = new ObservableCollection<ContactInfo>();
-
-                //var nbContacts = rnd.Next(1, 4);
-
-                //for (int i = 0; i < nbContacts; i++)
-                //{
-                //    var index = rnd.Next(contactInfos.Count);
-                //    var ci = contactInfos[index];
-                //    c.ContactInfos.Add(ci);
-                //}
-
-
+                int total = rdm.Next(20, 2000);
+                Invoice invoicee = new Invoice() { SubTotal = total };
+                invoices.Add(invoicee);
             }
         }
         public IEnumerable<Invoice> GetAll()
