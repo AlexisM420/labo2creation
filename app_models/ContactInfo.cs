@@ -1,4 +1,6 @@
-﻿namespace app_models
+﻿using System.ComponentModel;
+
+namespace app_models
 {
     public class ContactInfo
     {

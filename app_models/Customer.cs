@@ -89,6 +89,7 @@ namespace app_models
         public Customer()
         {
             PicturePath = "images/user.png";
+            InvoicesCstm = new ObservableCollection<Invoice>();
         }
 
         public ObservableCollection<ContactInfo> ContactInfos { get; set; }

@@ -15,15 +15,13 @@ using System.Windows.Shapes;
 namespace BillingManagement.UI.Views
 {
     /// <summary>
-    /// Interaction logic for CustomerView.xaml
+    /// Interaction logic for CustomerListView.xaml
     /// </summary>
-    public partial class CustomerView : UserControl
+    public partial class CustomerListView : UserControl
     {
-
-        public CustomerView()
+        public CustomerListView()
         {
             InitializeComponent();
-            //DataContext = new CustomerViewModel();
         }
     }
 }

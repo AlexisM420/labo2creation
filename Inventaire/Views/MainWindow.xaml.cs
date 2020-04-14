@@ -9,21 +9,19 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace BillingManagement.UI.Views
 {
     /// <summary>
-    /// Interaction logic for CustomerView.xaml
+    /// Interaction logic for MainWindow.xaml
     /// </summary>
-    public partial class CustomerView : UserControl
+    public partial class MainWindow : Window
     {
-
-        public CustomerView()
+        public MainWindow()
         {
             InitializeComponent();
-            //DataContext = new CustomerViewModel();
+            DataContext = new MainViewModel();
         }
     }
 }

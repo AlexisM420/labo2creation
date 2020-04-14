@@ -7,41 +7,52 @@ namespace BillingManagement.UI.ViewModels
 {
     public class CustomerViewModel : BaseViewModel
     {
-        readonly CustomersDataService customersDataService = new CustomersDataService();
-
-        private ObservableCollection<Customer> customers;
-        private Customer selectedCustomer;
-
-        public ObservableCollection<Customer> Customers
+        private Customer customer;
+        public Customer Customer
         {
-            get => customers;
-            private set
-            {
-                customers = value;
-                OnPropertyChanged();
-            }
-        }
-
-        public Customer SelectedCustomer
-        {
-            get => selectedCustomer;
+            get { return customer; }
             set
             {
-                selectedCustomer = value;
+                customer = value;
                 OnPropertyChanged();
             }
         }
 
-        public CustomerViewModel()
-        {
-            InitValues();
-        }
+        //readonly CustomersDataService customersDataService = new CustomersDataService();
 
-        private void InitValues()
-        {
-            Customers = new ObservableCollection<Customer>(customersDataService.GetAll());
-            Debug.WriteLine(Customers.Count);
-        }
+        //private ObservableCollection<Customer> customers;
+        //private Customer selectedCustomer;
+
+        //public ObservableCollection<Customer> Customers
+        //{
+        //    get => customers;
+        //    private set
+        //    {
+        //        customers = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+        //public Customer SelectedCustomer
+        //{
+        //    get => selectedCustomer;
+        //    set
+        //    {
+        //        selectedCustomer = value;
+        //        OnPropertyChanged();
+        //    }
+        //}
+
+        //public CustomerViewModel()
+        //{
+        //    InitValues();
+        //}
+
+        //private void InitValues()
+        //{
+        //    Customers = new ObservableCollection<Customer>(customersDataService.GetAll());
+        //    Debug.WriteLine(Customers.Count);
+        //}
 
     }
 }
